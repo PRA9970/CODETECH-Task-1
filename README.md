@@ -28,40 +28,37 @@ Python Code Structure:
 
 Example Code:
 
-def add(x, y):
-    return x + y
+       # Simple Calculator Program
 
-def subtract(x, y):
-    return x - y
+num1 = float(input("Enter first number: "))
+operation = input("Enter operation (+, -, *, /): ")
+num2 = float(input("Enter second number: "))
 
-def multiply(x, y):
-    return x * y
+if operation == '+':
+    result = num1 + num2
+elif operation == '-':
+    result = num1 - num2
+elif operation == '*':
+    result = num1 * num2
+elif operation == '/':
+    if num2 != 0:
+        result = num1 / num2
+    else:
+        result = "Error! Division by zero."
+else:
+    result = "Invalid operation."
 
-def divide(x, y):
-    if y == 0:
-        raise ValueError("Cannot divide by zero!")
-    return x / y
+print(f"The result is: {result}")
 
-while True:
-    num1 = float(input("Enter first number: "))
-    op = input("Enter operation (+, -, *, /): ")
-    num2 = float(input("Enter second number: "))
+Output:
+C:\Users\Pranita\PycharmProjects\pythonProject7\.venv\Scripts\python.exe C:\Users\Pranita\PycharmProjects\pythonProject7\main.py 
+Enter first number: 78905
+Enter operation (+, -, *, /): /
+Enter second number: 567849
+The result is: 0.1389541938085653
 
-    try:
-        if op == "+":
-            result = add(num1, num2)
-        elif op == "-":
-            result = subtract(num1, num2)
-        elif op == "*":
-            result = multiply(num1, num2)
-        elif op == "/":
-            result = divide(num1, num2)
-        else:
-            raise ValueError("Invalid operation!")
+Process finished with exit code 0
 
-        print("Result:", result)
-    except ValueError as e:
-        print("Error:", e)
 
 Project Goals:
 
